@@ -46,5 +46,27 @@ function test_2() {
     });
 }
 
+function test_3() {
 
+    var data = {
+        'name': 'zhangsan',
+        'age': 10,
+        'hobby':[{'hobby1':'test1', 'hobby2': 'test2'},{'hobby3':'test3', 'hobby3': 'test3'}]
+    };
+
+    $.ajax({
+        url: '/students/test_json3',
+        method: 'POST',
+        data: {data:JSON.stringify(data)},
+        success: function (data) {
+            console.log(data)
+
+        },
+        error: function () {
+
+        }
+
+    });
+
+}
 

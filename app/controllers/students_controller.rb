@@ -54,6 +54,36 @@ class StudentsController < ApplicationController
 
   end
 
+  def test_json3
+
+
+    require 'json'
+    p '--------------------total params--------------------'
+    p params
+    p '--------------------end--------------------'
+
+    p '--------------------begin each params[data]--------'
+    (JSON.parse params['data']).each do |key, value|
+
+      p key.to_s + '->' + value.to_s
+
+      if key.to_s.eql? 'hobby'
+        p '----------------hobby--------------------'
+        p value
+        value.each do |item|
+          item.each do |k, v|
+            p k.to_s + '->' + v.to_s
+          end
+        end
+      end
+    end
+
+    render :text => 200
+
+
+  end
+
+
   # GET /students/1
   # GET /students/1.json
   def show

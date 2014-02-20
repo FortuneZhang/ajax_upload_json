@@ -2,6 +2,7 @@ Test::Application.routes.draw do
 
   post 'students/test_json' => 'students#test_json'
   post 'students/test_json2' => 'students#test_json2'
+  post 'students/test_json3' => 'students#test_json3'
 
   resources :students
 
